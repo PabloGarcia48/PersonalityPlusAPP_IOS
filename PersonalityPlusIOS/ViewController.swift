@@ -8,6 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var totalCholeric: Int = 0
+    var totalSanguine: Int = 0
+    var totalPhlegmatic: Int = 0
+    var totalMelancholy: Int = 0
 
     @IBOutlet weak var sw1: UISwitch!
     @IBOutlet weak var sw2: UISwitch!
@@ -15,11 +20,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var sw4: UISwitch!
     @IBOutlet weak var viTeste: UIView!
     @IBOutlet weak var lbWordDefinition: UILabel!
+    @IBOutlet weak var lbTotalCholeric: UILabel!
+    @IBOutlet weak var lbTotalSanguine: UILabel!
+    @IBOutlet weak var lbTotalPhlegmatci: UILabel!
+    @IBOutlet weak var lbTotalMelancholy: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        viTeste.backgroundColor = .clear
     }
 
     @IBAction func takeOption1(_ sender: UISwitch) {
@@ -29,10 +38,14 @@ class ViewController: UIViewController {
             sw2.isOn = false
             sw3.isOn = false
             sw4.isOn = false
+            totalCholeric = totalCholeric + 1
         } else {
             viTeste.backgroundColor = .clear
             lbWordDefinition.text = "Descrição"
+            totalCholeric = totalCholeric - 1
         }
+        
+        lbTotalCholeric.text = String(totalCholeric)
     }
     
     @IBAction func takeOption2(_ sender: UISwitch) {
@@ -42,10 +55,14 @@ class ViewController: UIViewController {
             sw1.isOn = false
             sw3.isOn = false
             sw4.isOn = false
+            totalPhlegmatic = totalPhlegmatic + 1
         } else {
             viTeste.backgroundColor = .clear
             lbWordDefinition.text = "Descrição"
+            totalPhlegmatic = totalPhlegmatic - 1
         }
+        
+        lbTotalPhlegmatci.text = String(totalPhlegmatic)
     }
     
     @IBAction func takeOption3(_ sender: UISwitch) {
@@ -55,10 +72,14 @@ class ViewController: UIViewController {
             sw1.isOn = false
             sw2.isOn = false
             sw4.isOn = false
+            totalSanguine = totalSanguine + 1
         } else {
             viTeste.backgroundColor = .clear
             lbWordDefinition.text = "Descrição"
+            totalSanguine = totalSanguine - 1
         }
+        
+        lbTotalSanguine.text = String(totalSanguine)
     }
     
     @IBAction func takeOption4(_ sender: UISwitch) {
@@ -68,10 +89,14 @@ class ViewController: UIViewController {
             sw1.isOn = false
             sw2.isOn = false
             sw3.isOn = false
+            totalMelancholy = totalMelancholy + 1
         } else {
             viTeste.backgroundColor = .clear
             lbWordDefinition.text = "Descrição"
+            totalMelancholy = totalMelancholy - 1
         }
+        
+        lbTotalMelancholy.text = String(totalMelancholy)
     }
 
 }
